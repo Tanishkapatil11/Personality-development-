@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, rgba(155, 81, 224, 0.6), rgba(241, 101, 185, 0.6));
+      animation: gradientFade 10s ease infinite alternate;
+      color: #333;
+    }
+
+    @keyframes gradientFade {
+      0% {
+        background: linear-gradient(to right, rgba(155, 81, 224, 0.6), rgba(241, 101, 185, 0.6));
+      }
+      100% {
+        background: linear-gradient(to left, rgba(155, 81, 224, 0.6), rgba(241, 101, 185, 0.6));
+      }
+    }
+
+    .header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #9b51e0;
+    }
+
+    .contact-link {
+      color: #f165b9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      color: #333;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .search-bar input {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    .search-bar button {
+      background-color: #f165b9;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card a {
+      color: #3366ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .floating-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #9b51e0;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🗂 Help desk</div>
+    <a href="#" class="contact-link">Get in touch</a>
+  </header>
+
+  <section class="hero">
+    <h1>What can we help you with?</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Type your question here...">
+      <button onclick="searchArticles()">Search articles</button>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="card">
+      <div class="icon">🧭</div>
+      <h2>Aptitude Queries</h2>
+      <a href="#">10 articles</a>
+    </div>
+    <div class="card">
+      <div class="icon">📖</div>
+      <h2>Communication Gap?</h2>
+      <a href="#">10 articles</a>
+    </div>
+    <div class="card">
+      <div class="icon">💻</div>
+      <h2>Placement Issues</h2>
+      <a href="#">19 articles</a>
+    </div>
+  </section>
+
+  <a href="#" class="floating-contact">Get in touch</a>
+
+  <script>
+    function searchArticles() {
+      const query = document.getElementById('searchInput').value;
+      if (query.trim()) {
+        alert(`Searching for: ${query}`);
+      } else {
+        alert('Please type a question or keyword.');
+      }
+    }
+  </script>
+</body>
+</html>

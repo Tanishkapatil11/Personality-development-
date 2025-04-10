@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Web Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      animation: gradientFade 10s ease infinite alternate;
+    }
+
+    @keyframes gradientFade {
+      0% {
+        background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      }
+      100% {
+        background: linear-gradient(to left, #a18cd1, #fbc2eb);
+      }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #6f42c1;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #6f42c1;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background-color: white;
+      border-radius: 15px;
+      margin: 40px 10%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hero:hover {
+      transform: scale(1.01);
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-text h1 {
+      font-size: 42px;
+      color: #2c2c2c;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .hero-text .btn {
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .hero-text .btn:hover {
+      background: linear-gradient(to left, #a18cd1, #fbc2eb);
+      transform: scale(1.05);
+    }
+
+    .hero img {
+      max-width: 400px;
+      border-radius: 15px;
+      animation: fadeInRight 2s ease forwards;
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Personality Development</div>
+    <nav>
+      <a href="apptitude.html">Aptitude</a>
+      <a href="communication.html">Communication</a>
+      <a href="#">Group Discussion</a>
+      <a href="help.html">Help</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Personal Development</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero feugiat, faucibus libero id, scelerisque quam.</p>
+      <a href="#" class="btn">Explore More</a>
+    </div>
+    <img src="https://panbaiinternationalschool.com/wp-content/uploads/2025/02/Why-Personality-Development-Matters-for-School-Students.webp" alt="Hero Image">
+  </section>
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right,#9B51E0, #F165B9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: #f5f5f5;
+      padding: 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 2px solid #aaa;
+      background: transparent;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form input:focus,
+    .form textarea:focus {
+      border-color: #3a8dde;
+    }
+
+    .form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .form button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: linear-gradient(to right, #3a8dde, #855cd6);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: opacity 0.3s;
+    }
+
+    .form button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="form" id="feedbackForm">
+      <h2>Feedback</h2>
+      <input type="text" placeholder="Name" id="name" required />
+      <input type="email" placeholder="Email" id="email" required />
+      <input type="text" placeholder="Subject" id="subject" required />
+      <textarea placeholder="Message" id="message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && subject && message) {
+        console.log('Feedback submitted:');
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Subject:', subject);
+        console.log('Message:', message);
+        alert("Thank you for your feedback!");
+        document.getElementById('feedbackForm').reset();
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+</html>
